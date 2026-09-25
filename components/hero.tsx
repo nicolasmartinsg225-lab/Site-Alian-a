@@ -56,8 +56,10 @@ export function Hero() {
             style={{ animationDelay: '0.5s' }}
           >
             <a
-              href="#contato"
-              className="btn-sheen btn-press group inline-flex items-center justify-center gap-2 rounded-md bg-brand px-6 py-3.5 text-sm font-semibold text-[#0b0f12] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-10px_rgba(245,184,0,0.6)]"
+              href="https://wa.me/5534992691101?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+              target="_blank"
+              rel="noreferrer"
+              className="btn-sheen btn-press group inline-flex items-center justify-center gap-2 rounded-md bg-brand px-6 py-3.5 text-sm font-semibold text-[#0b0f12] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-[0_14px_36px_-10px_var(--color-brand-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light/70"
             >
               Solicitar orçamento
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />

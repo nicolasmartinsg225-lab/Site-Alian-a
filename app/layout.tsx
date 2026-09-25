@@ -45,11 +45,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/images/logo%20site.jpeg', type: 'image/jpeg', sizes: '16x16' },
+      { url: '/images/logo%20site.jpeg', type: 'image/jpeg', sizes: '32x32' },
     ],
-    apple: '/apple-icon.png',
+    apple: [{ url: '/images/logo%20site.jpeg', type: 'image/jpeg', sizes: '180x180' }],
   },
 }
 

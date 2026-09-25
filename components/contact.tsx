@@ -6,8 +6,8 @@ import { Reveal } from '@/components/reveal'
 import { SERVICE_OPTIONS } from '@/lib/site'
 
 const CONTACT_DETAILS = [
-  { icon: Phone, label: 'Telefone', value: '(00) 00000-0000' },
-  { icon: Mail, label: 'E-mail', value: 'contato@alianca.com.br' },
+  { icon: Phone, label: 'Telefone', value: '(34) 99269-1101' },
+  { icon: Mail, label: 'E-mail', value: 'servicosaliancaa@gmail.com' },
   { icon: MapPin, label: 'Atendimento', value: 'Consulte disponibilidade na sua região' },
 ]
 
@@ -16,6 +16,32 @@ export function Contact() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const name = String(formData.get('name') ?? '')
+    const company = String(formData.get('company') ?? '')
+    const email = String(formData.get('email') ?? '')
+    const phone = String(formData.get('phone') ?? '')
+    const service = String(formData.get('service') ?? '')
+    const message = String(formData.get('message') ?? '')
+
+    const whatsappText = encodeURIComponent(
+      [
+        'Olá! Gostaria de solicitar um orçamento.',
+        '',
+        `Nome: ${name}`,
+        `Empresa: ${company || 'Não informado'}`,
+        `E-mail: ${email}`,
+        `Telefone: ${phone || 'Não informado'}`,
+        `Serviço de interesse: ${service}`,
+        '',
+        'Mensagem:',
+        message,
+      ].join('\n'),
+    )
+
+    window.open(`https://wa.me/5534992691101?text=${whatsappText}`, '_blank', 'noopener,noreferrer')
     setSent(true)
   }
 
@@ -24,8 +50,8 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <Reveal>
-            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand">
-              <span className="h-px w-8 bg-brand" aria-hidden />
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand-light">
+              <span className="h-px w-8 bg-brand-light" aria-hidden />
               Contato
             </p>
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-balance text-fg sm:text-4xl md:text-5xl">
@@ -70,7 +96,7 @@ export function Contact() {
                   <button
                     type="button"
                     onClick={() => setSent(false)}
-                    className="mt-8 text-sm font-semibold text-brand underline-offset-4 hover:underline"
+                    className="mt-8 text-sm font-semibold text-brand-light underline-offset-4 hover:text-brand hover:underline"
                   >
                     Enviar nova solicitação
                   </button>
@@ -109,7 +135,7 @@ export function Contact() {
                         required
                         autoComplete="email"
                         className={fieldClass}
-                        placeholder="voce@empresa.com"
+                        placeholder="seu-email@gmail.com"
                       />
                     </Field>
                     <Field label="Telefone" htmlFor="phone">
@@ -150,7 +176,7 @@ export function Contact() {
 
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3.5 text-sm font-semibold text-[#0b0f12] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-10px_rgba(245,184,0,0.6)]"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand px-6 py-3.5 text-sm font-semibold text-[#0b0f12] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-[0_14px_36px_-10px_var(--color-brand-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light/70"
                   >
                     Enviar solicitação
                     <Send className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -166,7 +192,7 @@ export function Contact() {
 }
 
 const fieldClass =
-  'w-full rounded-md border border-white/10 bg-ink px-4 py-3 text-sm text-fg outline-none transition-colors placeholder:text-fg-muted/60 focus:border-brand/60 focus:ring-2 focus:ring-brand/20'
+  'w-full rounded-md border border-white/10 bg-ink px-4 py-3 text-sm text-fg outline-none transition-colors placeholder:text-fg-muted/60 focus:border-brand-light/70 focus:ring-2 focus:ring-brand/25'
 
 function Field({
   label,

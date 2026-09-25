@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -39,8 +40,14 @@ export function SiteHeader() {
         )}
       >
         <a href="#inicio" className="group flex items-center gap-3" aria-label={COMPANY.fullName}>
-          <span className="flex size-9 items-center justify-center rounded-md border border-brand/40 bg-brand-soft text-brand transition-colors group-hover:border-brand">
-            <span className="font-display text-lg font-bold leading-none">A</span>
+          <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-dark/60 bg-brand-soft transition-colors group-hover:border-brand-light">
+            <Image
+              src="/images/logo%20site.jpeg"
+              alt=""
+              width={36}
+              height={36}
+              className="size-full object-cover"
+            />
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-base font-bold tracking-wide text-fg">
@@ -61,7 +68,7 @@ export function SiteHeader() {
             >
               {link.label}
               <span
-                className="pointer-events-none absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 bg-brand transition-transform duration-300 ease-out group-hover:scale-x-100"
+                className="pointer-events-none absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 bg-brand-light transition-transform duration-300 ease-out group-hover:scale-x-100"
                 aria-hidden
               />
             </a>
@@ -70,8 +77,10 @@ export function SiteHeader() {
 
         <div className="hidden lg:block">
           <a
-            href="#contato"
-            className="inline-flex items-center rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-[#0b0f12] shadow-[0_0_0_0_rgba(245,184,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-8px_rgba(245,184,0,0.6)]"
+            href="https://wa.me/5534992691101?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-[#0b0f12] shadow-[0_0_0_0_var(--color-brand-glow)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-[0_10px_30px_-8px_var(--color-brand-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light/70"
           >
             Solicitar orçamento
           </a>
@@ -107,9 +116,11 @@ export function SiteHeader() {
             </a>
           ))}
           <a
-            href="#contato"
+            href="https://wa.me/5534992691101?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            target="_blank"
+            rel="noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-3 inline-flex items-center justify-center rounded-md bg-brand px-4 py-3.5 text-base font-semibold text-[#0b0f12]"
+            className="mt-3 inline-flex items-center justify-center rounded-md bg-brand px-4 py-3.5 text-base font-semibold text-[#0b0f12] transition-colors hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light/70"
           >
             Solicitar orçamento
           </a>

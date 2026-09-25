@@ -15,8 +15,8 @@ export function About() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal className="order-2 lg:order-1">
-            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand">
-              <span className="h-px w-8 bg-brand" aria-hidden />
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand-light">
+              <span className="h-px w-8 bg-brand-light" aria-hidden />
               A Empresa
             </p>
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-balance text-fg sm:text-4xl md:text-5xl">

@@ -6,8 +6,8 @@ export function Process() {
     <section id="processo" className="relative bg-panel py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand">
-            <span className="h-px w-8 bg-brand" aria-hidden />
+          <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand-light">
+            <span className="h-px w-8 bg-brand-light" aria-hidden />
             Como trabalhamos
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-balance text-fg sm:text-4xl md:text-5xl">
@@ -17,13 +17,13 @@ export function Process() {
 
         <ol className="relative mt-16 grid gap-10 md:grid-cols-5 md:gap-6">
           <span
-            className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-brand/10 via-brand/30 to-brand/10 md:block"
+            className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-brand-deep/30 via-brand-light/60 to-brand-deep/30 md:block"
             aria-hidden
           />
           {PROCESS_STEPS.map((step, i) => (
             <Reveal as="li" key={step.number} delay={i * 110} className="relative">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
-                <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border border-brand/30 bg-ink font-display text-sm font-bold text-brand">
+                <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border border-brand-dark/60 bg-ink font-display text-sm font-bold text-brand-light">
                   {step.number}
                 </span>
                 <h3 className="font-display text-lg font-semibold text-fg md:mt-5">

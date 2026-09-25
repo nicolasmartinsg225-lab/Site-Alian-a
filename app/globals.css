@@ -11,8 +11,13 @@
   --color-line: rgba(245, 247, 248, 0.08);
   --color-fg: #f5f7f8;
   --color-fg-muted: #8d979f;
-  --color-brand: #f5b800;
-  --color-brand-soft: rgba(245, 184, 0, 0.12);
+  --color-brand: #018ce5;
+  --color-brand-dark: #0065a8;
+  --color-brand-deep: #003b63;
+  --color-brand-light: #32a9f0;
+  --color-brand-subtle: #e8f6ff;
+  --color-brand-soft: rgba(1, 140, 229, 0.12);
+  --color-brand-glow: rgba(1, 140, 229, 0.6);
 
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -354,10 +359,10 @@
 @keyframes soft-pulse {
   0%,
   100% {
-    box-shadow: 0 10px 30px -10px rgba(245, 184, 0, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(1, 140, 229, 0.35);
   }
   50% {
-    box-shadow: 0 14px 40px -8px rgba(245, 184, 0, 0.6);
+    box-shadow: 0 14px 40px -8px var(--color-brand-glow);
   }
 }
 .soft-pulse {

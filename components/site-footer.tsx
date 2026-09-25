@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { COMPANY, NAV_LINKS } from '@/lib/site'
 
 export function SiteFooter() {
@@ -9,8 +10,14 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-md border border-brand/40 bg-brand-soft text-brand">
-                <span className="font-display text-lg font-bold leading-none">A</span>
+              <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-brand-dark/60 bg-brand-soft">
+                <Image
+                  src="/images/logo%20site.jpeg"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="size-full object-cover"
+                />
               </span>
               <span className="flex flex-col leading-none">
                 <span className="font-display text-base font-bold tracking-wide text-fg">
@@ -36,7 +43,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-fg-muted transition-colors hover:text-brand"
+                    className="text-sm text-fg-muted transition-colors hover:text-brand-light"
                   >
                     {link.label}
                   </a>
@@ -50,12 +57,22 @@ export function SiteFooter() {
               Contato
             </h3>
             <ul className="mt-5 space-y-3 text-sm text-fg-muted">
-              <li>(00) 00000-0000</li>
-              <li>contato@alianca.com.br</li>
               <li>
                 <a
-                  href="#contato"
-                  className="font-medium text-brand underline-offset-4 hover:underline"
+                  href="https://wa.me/5534992691101"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-brand-light"
+                >
+                  (34) 99269-1101
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/5534992691101?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-brand-light underline-offset-4 hover:text-brand hover:underline"
                 >
                   Solicitar orçamento
                 </a>
